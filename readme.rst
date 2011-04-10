@@ -81,7 +81,7 @@ it sees you are passing exactly 1 variable less than needed.
 
 ofcourse the above code can be done far easier using::
 
-    this.addEventListener(MouseEvent.MOUSE_OVER, callAtEvent(TweenLite.to).using(this, 1.5, {scaleX:scale, scaleY:scale}));
+    this.addEventListener(MouseEvent.MOUSE_OVER, callAtEvent(TweenLite.to).using(this, 1.5, {scaleX:2, scaleY:2}));
 
 For clarity, if you want to bind a function with only one variable which is the event, you can use::
 
