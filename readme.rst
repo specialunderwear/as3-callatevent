@@ -52,7 +52,10 @@ callAtEvent has a very tiny little dsl for creating event handlers from existing
     
     // or when aClosure does not need any parameters:
     callAtEvent(aClosure).on(context);
-    
+
+The `on` part is only available when the function passed to `callAtEvent` can be
+rebound. If it can not be rebound it will generate an error.
+
 When callAtEvent is working with a method, instead of a closure it gets even
 simpler because methods cannot be rebound to anything else but it's instance::
 
