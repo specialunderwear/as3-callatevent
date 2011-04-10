@@ -86,9 +86,19 @@ For clarity, if you want to bind a function with only one variable which is the 
         callAtEvent(function(evt:MouseEvent):void {
             evt.target.width = 100
         })
+        .withEvent
+    );
+
+Of course you might still need `this` to be bound correctly in which case you can do::
+
+    this.addEventListener(MouseEvent.MOUSE_OVER, 
+        callAtEvent(function(evt:MouseEvent):void {
+            evt.target.width = 100
+        })
         .on(this)
         .withEvent
     );
+    
 
 Write less and Reuse more code
 ==============================

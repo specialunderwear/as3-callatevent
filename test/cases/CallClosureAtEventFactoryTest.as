@@ -114,5 +114,21 @@ package cases
 				10, meh.width
 			);
 		}
+		
+		[Test]
+		public function withEventCanBeUsedWithOutOn():void
+		{
+			meh.addEventListener(MouseEvent.CLICK,
+				callAtEvent(function(evt:MouseEvent):void {
+					evt.target.width = 100
+				})
+				.withEvent
+			);
+			meh..dispatchEvent(new MouseEvent(MouseEvent.CLICK));
+			Assert.assertEquals(
+				"MethodEventHandlers should now be of width 100",
+				100, meh.width
+			);
+		}
 	}
 }
