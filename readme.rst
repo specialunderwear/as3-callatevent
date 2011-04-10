@@ -53,7 +53,7 @@ callAtEvent has a very tiny little dsl for creating event handlers from existing
     // or when aClosure does not need any parameters:
     callAtEvent(aClosure).on(context);
     
-When callAtEvent is working with a method instead if a closure it gets even
+When callAtEvent is working with a method, instead of a closure it gets even
 simpler because methods cannot be rebound to anything else but it's instance::
 
     callAtEvent(aMethod).using([paramToAMethod, ...])
@@ -94,9 +94,8 @@ Write less and Reuse more code
 ==============================
 
 With callAtEvent you can write a class with methods that any function can call,
-without the need for an event parameter, that is never used. This way your class
-is filled with useful methods instead of code that is only trigered once in a
-while by an event. That is less code than before.
+without the need for an event parameter. This way your class is filled with useful
+methods instead of code that is only trigered once in a while by an event.
 
 If you group common event handlers in mixin classes (https://github.com/specialunderwear/as3-mixin).
 You can call them in the context of your class using callAtEvent.
@@ -105,4 +104,4 @@ Weak listeners
 ==============
 
 You can not use weak listeners with callAtEvent because the event handler that callAtEvent
-creates for you will be garbage collected before it is triggered if you do.
+creates for you will be garbage collected before it is triggered.
