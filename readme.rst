@@ -118,3 +118,10 @@ Weak listeners
 
 You can not use weak listeners with callAtEvent because the event handler that callAtEvent
 creates for you will be garbage collected before it is triggered.
+
+Run the test suite
+==================
+
+check out the source code and in the root directory run::
+    
+    make test
