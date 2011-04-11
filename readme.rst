@@ -53,7 +53,7 @@ callAtEvent has a very tiny little dsl for creating event handlers from existing
     // or when aClosure does not need any parameters:
     callAtEvent(aClosure).on(context);
 
-The `on` part is only available when the function passed to `callAtEvent` can be
+The ``on`` part is only available when the function passed to ``callAtEvent`` can be
 rebound. If it can not be rebound it will generate an error.
 
 When callAtEvent is working with a method, instead of a closure it gets even
@@ -76,7 +76,7 @@ now you can just use it as::
 
     addEventListener(MouseEvent.MOUSE_OVER, callAtEvent(reusableEventHandler).using(2, 1.5));
 
-Note that i did not pass the event in the `using` call, callAtEvent will do that for you when
+Note that i did not pass the event in the ``using`` call, callAtEvent will do that for you when
 it sees you are passing exactly 1 variable less than needed.
 
 ofcourse the above code can be done far easier using::
@@ -92,7 +92,7 @@ For clarity, if you want to bind a function with only one variable which is the 
         .withEvent
     );
 
-Of course you might still need `this` to be bound correctly in which case you can do::
+Of course you might still need ``this`` to be bound correctly in which case you can do::
 
     this.addEventListener(MouseEvent.MOUSE_OVER, 
         callAtEvent(function(evt:MouseEvent):void {
