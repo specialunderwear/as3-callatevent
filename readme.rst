@@ -50,7 +50,7 @@ callAtEvent has a very tiny little dsl for creating event handlers from existing
     
     callAtEvent(aClosure).on(context).using([paramToAClosure, ...]);
     
-    // or when aClosure does not need any parameters:
+    // or when aClosure does not have any parameters:
     callAtEvent(aClosure).on(context);
 
 The ``on`` part is only available when the function passed to ``callAtEvent`` can be
@@ -61,7 +61,7 @@ simpler because methods cannot be rebound to anything else but it's instance::
 
     callAtEvent(aMethod).using([paramToAMethod, ...])
 
-    // or when aMethod does not need any parameters:
+    // or when aMethod does not have any parameters:
     callAtEvent(aMethod)
 
 By default callAtEvent does not pass the event to your function or method anymore,
@@ -78,7 +78,7 @@ now you can just use it as::
 
 Note that i did not pass the event in the ``using`` call, callAtEvent will do that for you when
 it sees you are passing exactly 1 variable less than needed. The event must the first parameter of
-your function.
+your function. You have to pass all parameters to using, also the ones that have default values.
 
 ofcourse the above code can be done far easier using::
 
