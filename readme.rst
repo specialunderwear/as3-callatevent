@@ -92,14 +92,16 @@ For clarity, if you want to bind a function with only one variable which is the 
         })
         .withEvent
     );
+    // yes this is pretty pointless, you can also use the closure directly.
 
 Of course you might still need ``this`` to be bound correctly in which case you can do::
 
     this.addEventListener(MouseEvent.MOUSE_OVER, 
         callAtEvent(function(evt:MouseEvent):void {
-            evt.target.width = 100
+            // button gets same width as the thing that has the listener.
+            this.width = evt.target.width;
         })
-        .on(this)
+        .on(button)
         .withEvent
     );
     
