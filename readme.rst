@@ -48,7 +48,7 @@ Syntax
 
 callAtEvent has a very tiny little dsl for creating event handlers from existing functions::
     
-    callAtEvent(aClosure).on(context).using([paramToAClosure, ...]);
+    callAtEvent(aClosure).on(context).using(paramToAClosure, ... etc);
     
     // or when aClosure does not have any parameters:
     callAtEvent(aClosure).on(context);
@@ -59,7 +59,7 @@ rebound. If it can not be rebound it will generate an error.
 When callAtEvent is working with a method, instead of a closure it gets even
 simpler because methods cannot be rebound to anything else but it's instance::
 
-    callAtEvent(aMethod).using([paramToAMethod, ...])
+    callAtEvent(aMethod).using(paramToAMethod, ... etc)
 
     // or when aMethod does not have any parameters:
     callAtEvent(aMethod)
