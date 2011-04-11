@@ -77,7 +77,8 @@ now you can just use it as::
     addEventListener(MouseEvent.MOUSE_OVER, callAtEvent(reusableEventHandler).using(2, 1.5));
 
 Note that i did not pass the event in the ``using`` call, callAtEvent will do that for you when
-it sees you are passing exactly 1 variable less than needed.
+it sees you are passing exactly 1 variable less than needed. The event must the first parameter of
+your function.
 
 ofcourse the above code can be done far easier using::
 
