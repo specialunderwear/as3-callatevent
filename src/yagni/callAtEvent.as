@@ -72,13 +72,13 @@ internal class MethodClosureWrapper
 		if (params.length + 1 == callBack.length) {
 			return function( evt: Event = null ): void {
 				params.unshift(evt);
-				callBack.apply( context, params )
+				callBack.apply( context, params );
 			};			
 		}
 		
 		// return the event handler
 		return function( evt: Event = null ): void {
-			callBack.apply( context, params )
+			callBack.apply( context, params );
 		};
 	}
 	
@@ -93,7 +93,7 @@ internal class MethodClosureWrapper
 	public function get withEvent():Function
 	{
 		return function( ... params ): void {
-			callBack.apply( context, params )
+			callBack.apply( context, params );
 		};
 	}
 }
