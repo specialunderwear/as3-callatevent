@@ -132,3 +132,17 @@ Run the test suite
 check out the source code and in the root directory run::
     
     make test
+
+Annoying warning
+================
+
+You might see the following warning when using ``callAtEvent``::
+
+    Warning: Function value used where type * was expected.
+    Possibly the parentheses () are missing after this function reference.
+
+Add::
+
+    <warn-unlikely-function-value>false</warn-unlikely-function-value>
+
+To your config file to make it go away.
