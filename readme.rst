@@ -136,7 +136,8 @@ check out the source code and in the root directory run::
 Annoying warning
 ================
 
-You might see the following warning when using ``callAtEvent``::
+You might see the following warning when using ``callAtEvent`` source files
+instead of the swc::
 
     Warning: Function value used where type * was expected.
     Possibly the parentheses () are missing after this function reference.
