@@ -71,8 +71,7 @@ internal class MethodClosureWrapper
 		// object. This is always the first slot.
 		if (params.length + 1 == callBack.length) {
 			return function( evt: Event = null ): void {
-				params.unshift(evt);
-				callBack.apply( context, params );
+				callBack.apply( context, [evt].concat.apply(NaN, params) );
 			};			
 		}
 		
