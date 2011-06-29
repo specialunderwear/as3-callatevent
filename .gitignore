@@ -1,5 +1,5 @@
 bin/as3-callatevent.swf.cache
 bin/as3-callatevent.swf
-bin/as3-callatevent-v0.0.1.swc.cache
-bin/as3-callatevent-v0.0.1.swc
+bin/as3-callatevent-v0.0.*.swc.cache
+bin/as3-callatevent-v0.0.*.swc
 
