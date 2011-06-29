@@ -88,6 +88,29 @@ package cases
 			);
 		}
 		
+		[Test(async)]
+		public function callAtEventDoesNotIncreaseParameterCountOverMultipleMethodCalls():void
+		{
+			var count:int = 0;
+			dispatcher.addEventListener(MouseEvent.CLICK, 
+				callAtEvent(function(evt:MouseEvent, ... args):void
+				{
+					count+= args.length;
+				})
+				.on(meh).using()
+			)
+			
+			// if the test fails, an exception is thrown on the second call.
+			dispatcher.dispatchEvent(new MouseEvent(MouseEvent.CLICK));
+			dispatcher.dispatchEvent(new MouseEvent(MouseEvent.CLICK));
+			dispatcher.dispatchEvent(new MouseEvent(MouseEvent.CLICK));
+			
+			Assert.assertEquals(
+				"The event handler should never have received any more paramters but the event",
+				0, count
+			)
+		}
+		
 		[Test]
 		public function callAtEventDoesNotRequireUsingForMethodsWithoutParams():void
 		{
