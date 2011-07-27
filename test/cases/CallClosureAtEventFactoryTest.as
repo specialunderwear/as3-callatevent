@@ -147,7 +147,7 @@ package cases
 				})
 				.withEvent
 			);
-			meh..dispatchEvent(new MouseEvent(MouseEvent.CLICK));
+			meh.dispatchEvent(new MouseEvent(MouseEvent.CLICK));
 			Assert.assertEquals(
 				"MethodEventHandlers should now be of width 100",
 				100, meh.width
